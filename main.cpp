@@ -24,12 +24,6 @@ int main() {
     transposition[green] = map<char, bool>();
     transposition[red] = map<char, bool>();
     transposition[blue] = map<char, bool>();
-    // g.move('F');
-    // g.undo();
-    // vector<char> mee = g.moves();
-    // for(int i = 0; i < mee.size(); i++) {
-    //     cout << mee.at(i) << " ";
-    // }
 
     solve(g);
 
