@@ -1,6 +1,6 @@
 # MazeOfTunnels
 
-for mode 1, there are 4 solutions without repeating a route
+for mode 1, there are 4 solutions without making a loop
 
 M E H A V C T D J N L P S F M V A T C I D B J K G 
 
