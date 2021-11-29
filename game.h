@@ -6,10 +6,12 @@
 using namespace std;
 
 enum color { red, green, blue };
+enum mode { greenStart, blueStart };
 
 class Game {
     public: 
-        Game();
+        Game(mode=greenStart);
+        mode game_mode;
         vector<char> moves();
         void move(char);
         color active_color;

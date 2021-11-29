@@ -5,8 +5,14 @@
 #include <map>
 #include <iostream>
 
-Game::Game() {
-    active_color = green;
+Game::Game(mode m) {
+    game_mode = m;
+    if(m == greenStart) {
+        active_color = green;
+    } else {
+        active_color = blue;
+    }
+    
     node = 'M';
     stuff[red] =  map<char, vector<char>>();
     stuff[green] = map<char, vector<char>>();
@@ -49,13 +55,25 @@ void Game::move(char m) {
 }
 
 void Game::increment_color() {
-    if(active_color == green) {
-        active_color = blue;
-    } else if(active_color == blue) {
-        active_color = red;
+    if(game_mode == greenStart) {
+        if(active_color == green) {
+            active_color = blue;
+        } else if(active_color == blue) {
+            active_color = red;
+        } else {
+            active_color = green;
+        }
     } else {
-        active_color = green;
+        // r b g
+        if(active_color == green) {
+            active_color = red;
+        } else if(active_color == red) {
+            active_color = blue;
+        } else {
+            active_color = green;
+        }
     }
+    
 }
 
 void Game::decrement_color() {
