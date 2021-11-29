@@ -9,8 +9,12 @@ void add_trans(char m, color c) {
     transposition[c][m] = true;
 }
 
+void remove_trans(char m, color c) {
+     transposition[c][m] = false;
+}
+
 bool deja_vu(char m, color c) {
-    return (transposition[c].count(m) != 0);
+    return (transposition[c].count(m) != 0 && transposition[c][m]);
 }
 
 void solve(Game &, string = "");
@@ -43,6 +47,7 @@ void solve(Game &g, string indent) {
         g.move(moves.at(i));
         solve(g);
         g.undo();
+        remove_trans(g.node, g.active_color);
     }
     
 }
